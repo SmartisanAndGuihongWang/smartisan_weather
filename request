@@ -1,0 +1,18 @@
+const request = require('request');
+
+const options = {
+  method: 'GET',
+  url: 'http://api-weather.smartisan.com/v3/info.php?city_id=101010300&fields=forecast%2Cobserve%2Cair%2Cforecast_hour&key=bd34eb6e131175a2c4db078d2ba1c7cf',
+  headers: {
+    'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.1; OD105 Build/NMF26F)',
+    'Connection': 'Keep-Alive',
+    'Accept': 'application/json',
+    'Accept-Encoding': 'gzip'
+  }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
